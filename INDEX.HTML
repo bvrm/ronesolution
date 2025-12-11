@@ -1,225 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RONE SOLUTION — Computer & Mobile Repair</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RONE SOLUTION</title>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Optional: Google Fonts (CDN) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <style>
-    :root { --brand: #0ea5a4; } /* teal-500 like */
-    body { font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-  </style>
+    <!-- Custom JS Animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const nav = document.getElementById("navbar");
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add("bg-gray-900", "shadow-lg");
+                } else {
+                    nav.classList.remove("bg-gray-900", "shadow-lg");
+                }
+            });
+        });
+    </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
 
-  <!-- NAV -->
-  <header class="bg-white shadow-sm">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-md bg-gradient-to-r from-teal-400 to-teal-600 flex items-center justify-center text-white font-bold">
-          RS
+<body class="bg-gray-950 text-white font-sans">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+            <h1 class="text-2xl font-bold text-cyan-400">RONE SOLUTION</h1>
+
+            <div class="space-x-6 hidden md:block">
+                <a href="#services" class="hover:text-cyan-400">Services</a>
+                <a href="#about" class="hover:text-cyan-400">About</a>
+                <a href="#contact" class="hover:text-cyan-400">Contact</a>
+            </div>
         </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="h-screen flex items-center justify-center text-center px-6 bg-gradient-to-br from-gray-900 to-black">
         <div>
-          <h1 class="text-xl font-semibold">RONE SOLUTION</h1>
-          <p class="text-xs text-gray-500">Computer • Mobile • Troubleshooting</p>
+            <h2 class="text-4xl md:text-6xl font-bold text-cyan-400 drop-shadow-lg">
+                Fast • Reliable • Trusted
+            </h2>
+            <p class="mt-4 text-lg text-gray-300">
+                Computer Repair | Mobile Repair | Software Troubleshooting
+            </p>
+            <button class="mt-6 bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-lg font-bold">
+                Contact Us
+            </button>
         </div>
-      </div>
-
-      <nav class="hidden md:flex items-center space-x-6 text-sm">
-        <a href="#services" class="hover:text-teal-600">Services</a>
-        <a href="#about" class="hover:text-teal-600">About</a>
-        <a href="#contact" class="hover:text-teal-600">Contact</a>
-        <button id="contactBtn" class="ml-2 px-4 py-2 bg-teal-500 text-white rounded-md hover:bg-teal-600">Get Help</button>
-      </nav>
-
-      <!-- mobile menu button -->
-      <button id="mobileToggle" class="md:hidden p-2 rounded-md hover:bg-gray-100">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-
-    <!-- mobile nav -->
-    <div id="mobileNav" class="md:hidden px-6 pb-4 hidden">
-      <a href="#services" class="block py-2">Services</a>
-      <a href="#about" class="block py-2">About</a>
-      <a href="#contact" class="block py-2">Contact</a>
-      <button id="contactBtn2" class="w-full mt-2 px-4 py-2 bg-teal-500 text-white rounded-md">Get Help</button>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <main class="max-w-6xl mx-auto px-6 py-12">
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <div>
-        <h2 class="text-4xl font-extrabold leading-tight">RONE SOLUTION</h2>
-        <p class="mt-4 text-gray-600">Fast, reliable computer & mobile repair and troubleshooting services. We get your devices back to life — hardware, software, and network fixes.</p>
-
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#services" class="inline-block px-5 py-3 bg-teal-500 text-white rounded-lg shadow hover:bg-teal-600">Our Services</a>
-          <button id="quoteBtn" class="inline-block px-5 py-3 border border-gray-200 rounded-lg hover:bg-gray-100">Request Quote</button>
-        </div>
-
-        <ul class="mt-6 space-y-2 text-sm text-gray-600">
-          <li>• Computer hardware & software repair</li>
-          <li>• Mobile screen & battery replacement</li>
-          <li>• Network & troubleshooting support</li>
-        </ul>
-      </div>
-
-      <div class="bg-white rounded-xl shadow p-6">
-        <!-- Simple illustrative card -->
-        <div class="h-56 flex items-center justify-center text-teal-600">
-          <!-- Inline SVG placeholder -->
-          <svg width="180" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="opacity-90">
-            <rect x="1" y="4" width="22" height="14" rx="2" stroke-width="1.5"></rect>
-            <path d="M3 8h18" stroke-width="1.5"></path>
-            <circle cx="8" cy="11" r="1.5" fill="currentColor"></circle>
-            <circle cx="12" cy="11" r="1.5" fill="currentColor"></circle>
-            <circle cx="16" cy="11" r="1.5" fill="currentColor"></circle>
-          </svg>
-        </div>
-
-        <div class="mt-4 text-sm text-gray-600">
-          <p><strong>Opening Hours:</strong> Mon–Sat: 9:00 AM – 7:00 PM</p>
-          <p class="mt-2"><strong>Location:</strong> Your shop address here</p>
-        </div>
-      </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="mt-12">
-      <h3 class="text-2xl font-semibold mb-6">Services We Offer</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-xl p-6 shadow">
-          <h4 class="font-semibold text-lg">Computer Repair</h4>
-          <p class="mt-2 text-sm text-gray-600">Hardware replacement, OS reinstall, data recovery, performance tuning and virus removal.</p>
-          <div class="mt-4 text-sm text-gray-500">Diagnostics starting from <strong>Rs. 500</strong></div>
-        </div>
+    <!-- Services -->
+    <section id="services" class="py-20 bg-gray-900">
+        <h2 class="text-center text-4xl font-bold text-cyan-400">Our Services</h2>
 
-        <div class="bg-white rounded-xl p-6 shadow">
-          <h4 class="font-semibold text-lg">Mobile Repair</h4>
-          <p class="mt-2 text-sm text-gray-600">Screen replacement, battery, camera, charging port, and software fixes.</p>
-          <div class="mt-4 text-sm text-gray-500">Common parts available — quick turnaround.</div>
-        </div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 px-6">
 
-        <div class="bg-white rounded-xl p-6 shadow">
-          <h4 class="font-semibold text-lg">Troubleshooting</h4>
-          <p class="mt-2 text-sm text-gray-600">Network setup, software troubleshooting, peripheral and printer fixes, on-site support available.</p>
-          <div class="mt-4 text-sm text-gray-500">On-site visits by appointment.</div>
+            <!-- Card 1 -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition-all">
+                <span class="material-icons text-cyan-400 text-5xl">computer</span>
+                <h3 class="mt-4 text-xl font-bold">Computer Repair</h3>
+                <p class="text-gray-400 mt-2">Windows installation, hardware repair, upgrades, virus removal.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition-all">
+                <span class="material-icons text-cyan-400 text-5xl">phone_iphone</span>
+                <h3 class="mt-4 text-xl font-bold">Mobile Repair</h3>
+                <p class="text-gray-400 mt-2">Mobile software flashing, display repairs, battery issues & more.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition-all">
+                <span class="material-icons text-cyan-400 text-5xl">build</span>
+                <h3 class="mt-4 text-xl font-bold">Troubleshooting</h3>
+                <p class="text-gray-400 mt-2">Any technical issue – fast diagnosis and quick solution.</p>
+            </div>
+
         </div>
-      </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="mt-12">
-      <h3 class="text-2xl font-semibold mb-3">Why Choose RONE SOLUTION?</h3>
-      <p class="text-gray-600">Trusted local technicians, transparent pricing, fast turnaround and warranty on repairs. Customer satisfaction is our priority.</p>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="mt-12">
-      <h3 class="text-2xl font-semibold mb-4">Contact & Support</h3>
-      <div class="bg-white rounded-xl p-6 shadow grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <p class="text-gray-600">Call / WhatsApp: <strong>+94 XX XXX XXXX</strong></p>
-          <p class="mt-2 text-gray-600">Email: <strong>info@ronesolution.example</strong></p>
-          <p class="mt-4 text-sm text-gray-500">Visit our shop for a free diagnosis.</p>
+    <!-- About -->
+    <section id="about" class="py-20">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-4xl font-bold text-cyan-400">About Us</h2>
+            <p class="text-gray-300 mt-4">
+                RONE SOLUTION is your trusted repair service center for all computer, mobile, 
+                and software troubleshooting needs. We provide fast, reliable, and professional service.
+            </p>
         </div>
-
-        <form id="contactForm" class="space-y-3">
-          <input type="text" id="name" placeholder="Your name" class="w-full px-3 py-2 border rounded" />
-          <input type="text" id="phone" placeholder="Phone or WhatsApp" class="w-full px-3 py-2 border rounded" />
-          <textarea id="message" rows="3" placeholder="Brief message / issue" class="w-full px-3 py-2 border rounded"></textarea>
-          <div class="flex justify-end">
-            <button type="button" id="sendBtn" class="px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600">Send</button>
-          </div>
-        </form>
-      </div>
     </section>
-  </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-white border-t">
-    <div class="max-w-6xl mx-auto px-6 py-6 text-center text-sm text-gray-500">
-      &copy; <span id="year"></span> RONE SOLUTION. All rights reserved.
-    </div>
-  </footer>
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <h2 class="text-center text-4xl font-bold text-cyan-400">Contact Us</h2>
+        <div class="max-w-4xl mx-auto mt-10 text-center">
+            <p class="text-gray-300 text-lg">📍 Location: Your Shop Location Here</p>
+            <p class="text-gray-300 text-lg">📞 Phone: 07X XXX XXXX</p>
+            <p class="text-gray-300 text-lg">📧 Email: info@rionesolution.com</p>
+        </div>
+    </section>
 
-  <!-- SIMPLE MODAL (hidden by default) -->
-  <div id="modal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
-    <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 p-6">
-      <h4 class="text-lg font-semibold">Request a Quote</h4>
-      <p class="text-sm text-gray-600 mt-2">Leave your details and we'll contact you soon.</p>
+    <footer class="py-6 text-center bg-black text-gray-500">
+        © 2025 RONE SOLUTION. All Rights Reserved.
+    </footer>
 
-      <div class="mt-4 space-y-3">
-        <input id="m_name" class="w-full px-3 py-2 border rounded" placeholder="Name">
-        <input id="m_contact" class="w-full px-3 py-2 border rounded" placeholder="Phone or WhatsApp">
-        <textarea id="m_issue" class="w-full px-3 py-2 border rounded" rows="3" placeholder="Describe the issue"></textarea>
-      </div>
-
-      <div class="mt-4 flex justify-end gap-3">
-        <button id="closeModal" class="px-4 py-2 border rounded">Cancel</button>
-        <button id="submitModal" class="px-4 py-2 bg-teal-500 text-white rounded">Submit</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCRIPT -->
-  <script>
-    // basic interactions (no backend)
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const modal = document.getElementById('modal');
-    document.getElementById('quoteBtn').addEventListener('click', () => modal.classList.remove('hidden'));
-    document.getElementById('contactBtn').addEventListener('click', () => modal.classList.remove('hidden'));
-    document.getElementById('contactBtn2').addEventListener('click', () => modal.classList.remove('hidden'));
-    document.getElementById('closeModal').addEventListener('click', () => modal.classList.add('hidden'));
-
-    document.getElementById('submitModal').addEventListener('click', () => {
-      // Simple validation
-      const name = document.getElementById('m_name').value.trim();
-      const contact = document.getElementById('m_contact').value.trim();
-      const issue = document.getElementById('m_issue').value.trim();
-      if (!name || !contact) {
-        alert('Please enter name and contact.');
-        return;
-      }
-      // Placeholder: you'd send this to your server / whatsapp link / email in real site
-      alert('Thanks, ' + name + '! We will contact you soon.');
-      modal.classList.add('hidden');
-      // reset
-      document.getElementById('m_name').value = '';
-      document.getElementById('m_contact').value = '';
-      document.getElementById('m_issue').value = '';
-    });
-
-    // contact form send
-    document.getElementById('sendBtn').addEventListener('click', () => {
-      const nm = document.getElementById('name').value.trim();
-      const ph = document.getElementById('phone').value.trim();
-      const msg = document.getElementById('message').value.trim();
-      if (!nm || !ph) {
-        alert('Please provide your name and contact.');
-        return;
-      }
-      alert('Thanks, ' + nm + '! We will contact you at ' + ph + '.');
-      document.getElementById('contactForm').reset();
-    });
-
-    // mobile nav toggle
-    document.getElementById('mobileToggle').addEventListener('click', () => {
-      const m = document.getElementById('mobileNav');
-      m.classList.toggle('hidden');
-    });
-  </script>
 </body>
 </html>
